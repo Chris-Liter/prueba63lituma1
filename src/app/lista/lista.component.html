@@ -1,0 +1,40 @@
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="Buscar..." [(ngModel)]="clienteNom.dni" name="nombre">
+
+    <button id="searchButton" (click)="buscar()">Buscar</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Deudas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let clien of cli | keyvalue">
+                <td *ngIf="clien.key === 'deudas'">{{ clien.value }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>Codigo</th>
+                <th>DNI</th>
+                <th>Nombre</th>
+                <th>Deudas</th>
+                <th>Direccion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let clien of cliente">
+                <td>{{clien.codigo}}</td>
+                <td>{{clien.dni}}</td>
+                <td>{{clien.nombre}}</td>
+                <td>{{clien.deudas}}</td>
+                <td>{{clien.direccion}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
